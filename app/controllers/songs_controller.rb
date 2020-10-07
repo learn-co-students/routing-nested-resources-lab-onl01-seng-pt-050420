@@ -4,7 +4,6 @@ class SongsController < ApplicationController
     if params[:artist_id].blank?
       @songs = Song.all
     elsif !@artist.empty?
-      # binding.pry
       @songs = @artist.first.songs
     else
       flash[:notice] = "Artist not found."
